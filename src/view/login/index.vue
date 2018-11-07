@@ -16,7 +16,7 @@
 </template>
 <script>
     import {LoginFn} from '@/utils/auth'
-    // import { Toast } from 'mint-ui';
+    import { getData } from '@/api/index';
     export default{
         data(){
             return{
@@ -55,9 +55,11 @@
             // },
         },
         created() {
-            this.$api.get('Delivery/getAdvTop/', null, r => {
-                console.log(r)
-            })
+            getData('206104').then(res => {
+            
+            }).catch(err => {
+                console.log(err)
+            });
         },
     }
 </script>
